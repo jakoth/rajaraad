@@ -1,6 +1,5 @@
 import turtle
 import math
-# Many functions
 
 def drawpoly(n, length, direct, board):
 	for i in range(n):
