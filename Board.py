@@ -12,7 +12,6 @@ def drawpoly(n, length, direct, board):
 
 
 def draw_line(start_pos, length, direction_angle, board, line_colour):
-	board.penup()
 	board.goto(start_pos[0], start_pos[1])
 	board.pendown()
 	board.color(line_colour)
