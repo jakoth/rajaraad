@@ -1,29 +1,32 @@
+from config import *
 import turtle
-from Coordinates import point_definer, white_screen_coordinates, neighbouring_points_def
+from Coordinates import *
 from Board import Board
-from Piece import draw_pieces
+from Piece import draw_pieces, on_click
+from CPU_Files import *
 
+
+# Driver function.
+
+# Returns nothing. Temporarily is the function which calls everything in order. May be replaced by another function. 
 
 def raja_raad_init():
-    wn = turtle.Screen()
-    wn_len = 300
-    wn_height = 600
-    wn.title("Raja Raad")
-    wn.bgcolor("lightblue")
-    wn.tracer(0)
-    wn.setup(wn_len, wn_height)
-    if wn_len < 300:
-        square_len = wn_len / 6
-    else:
-        square_len = 50
-    point_names = point_definer(square_len)
-    neighbouring_points_def(point_names)
-    white_screen_coordinates()
-    # noinspection PyUnusedLocal
-    board1 = Board("orange", square_len, "red", "blue")
-    draw_pieces(10, point_names)
-    while True:
-        wn.update()
+	
+	point_definer()
+	neighbouring_points_def()
+	white_screen_coordinates()
+	board1 = Board("orange", config.board_brush_size, "red", "blue")
+	draw_pieces()
+	wn.onscreenclick(on_click)
+	"""calc_all_possible_moves("white")
+	for move in Config2.possible_moves:
+		game_ID_writer.write(move)
+		game_ID_writer.goto(game_ID_writer.xcor(), game_ID_writer.ycor() - 30)"""
+	game_ID_writer.write(radius)
+	game_ID_writer.goto(game_ID_writer.xcor(), game_ID_writer.ycor() - 30)
+	
+	while True:
+		wn.update()
 
 
 raja_raad_init()
