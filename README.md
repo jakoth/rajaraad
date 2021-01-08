@@ -1,5 +1,5 @@
 # Rajaraad
-Ancient Traditional Rajasthani 2 player game where the simple goal is to kill the opponents pieces.
+Ancient Traditional Rajasthani 2 player game made completely with python language, and turtle module for the graphics where the simple goal is to eliminate all of the opponents pieces.
 
 ## How To Play
 
